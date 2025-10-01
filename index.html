@@ -1,284 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seaport Cellars</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f7f5; /* Off-white background for warmth */
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-        /* Style for active tab */
-        .tab-active {
-            border-bottom-color: #a12a34; /* A deep red to match the wine label */
-            color: #1f2937;
-            font-weight: 600;
-        }
-        /* Style for inactive tabs */
-        .tab-inactive {
-            border-bottom-color: transparent;
-            color: #6b7280;
-        }
-        /* Simple transition for content fade-in */
-        .page-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seaport Cellars</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom Styles -->
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8f7f5; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .tab-active { border-bottom-color: #a12a34; color: #1f2937; font-weight: 600; }
+    .tab-inactive { border-bottom-color: transparent; color: #6b7280; }
+    .page-content { display: none; animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
+  </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Header & Navigation -->
-    <header class="bg-gray-900 shadow-md sticky top-0 z-50 text-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <!-- LOCAL FILE PATH -->
-                    <img class="h-10" src="images/SEAPORT CELLARS hz wht rev.png" alt="Seaport Cellars Logo">
-                </div>
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-4">
-                    <button onclick="showPage('home')" class="tab-active text-white hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="home">Home</button>
-                    <button onclick="showPage('wines')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="wines">Our Wines</button>
-                    <button onclick="showPage('about')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="about">About Us</button>
-                    <button onclick="showPage('contact')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="contact">Contact & Mailing List</button>
-                </nav>
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+  <!-- Header & Navigation -->
+  <header class="bg-gray-900 shadow-md sticky top-0 z-50 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img class="h-10" src="images/SEAPORT CELLARS hz wht rev.png" alt="Seaport Cellars Logo"/>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <button onclick="showPage('home')" class="text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="home">Home</button>
-                <button onclick="showPage('wines')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="wines">Our Wines</button>
-                <button onclick="showPage('about')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="about">About Us</button>
-                <button onclick="showPage('contact')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="contact">Contact & Mailing List</button>
-            </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-4">
+          <button onclick="showPage('home')" class="tab-active text-white hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="home">Home</button>
+          <button onclick="showPage('wines')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="wines">Our Wines</button>
+          <button onclick="showPage('about')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="about">About Us</button>
+          <button onclick="showPage('contact')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="contact">Contact & Mailing List</button>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
-
-        <!-- Home Page -->
-        <section id="home" class="page-content">
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden">
-                <div class="relative">
-                    <!-- LOCAL FILE PATH -->
-                    <img class="w-full h-64 sm:h-96 object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Grenache and Grenache Blanc bottles">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                        <div class="text-center">
-                            <h1 class="text-4xl sm:text-6xl text-white font-bold tracking-tight">Crafted in Oregon.</h1>
-                            <p class="mt-4 text-lg sm:text-xl text-gray-200">A tale of passion, family, and the finest Oregon grapes.</p>
-                            <button onclick="showPage('wines')" class="mt-8 bg-white text-gray-900 hover:bg-gray-200 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">Discover Our Wines</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Wines Page -->
-        <section id="wines" class="page-content">
-            <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Inaugural Vintage</h2>
-                <div class="grid grid-cols-1 gap-12 items-center">
-                    <!-- Grenache -->
-                    <div class="text-center lg:text-left flex flex-col sm:flex-row items-center gap-8">
-                        <!-- LOCAL FILE PATH -->
-                        <img class="w-24 sm:w-32 h-auto mx-auto lg:mx-0" src="images/SC_GRENACHE_labeled bottle_no_cap.jpg" alt="Seaport Cellars Grenache">
-                        <div>
-                            <h3 class="text-2xl font-bold">No.1: 2024 Grenache</h3>
-                            <p class="mt-2 text-gray-600">Seaport Cellars showcases the expression of the Grenache grape in the vineyards of the Pacific Northwest. Our debut bottling comes from the Lowry Vineyard, perched at 1,500 feet in Oregon's Rogue Valley AVA, just outside Medford. This site yields fruit with striking purity and hints of baking spice — a combo that plays well year round. It's a natural with turkey at Thanksgiving, a chilled Porch Pounder in summer, or best of all, enjoyed on the deck of a boat at any seaport.</p>
-                            <ul class="mt-4 text-left space-y-2 inline-block">
-                                <li class="flex items-center"><span class="font-semibold w-32">VINTAGE:</span> 2024</li>
-                                <li class="flex items-center"><span class="font-semibold w-32">VARIETAL:</span> Grenache</li>
-                                <li class="flex items-center"><span class="font-semibold w-32">ABV:</span> 13.6%</li>
-                                <li class="flex items-center"><span class="font-semibold w-32">VINEYARD:</span> Lowry Vineyard</li>
-                                <li class="flex items-center"><span class="font-semibold w-32">PRODUCTION:</span> 75 Cases</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Page -->
-        <section id="about" class="page-content">
-            <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Story</h2>
-                        <p class="mb-4 text-gray-600">Seaport Cellars was born from a passion for wine and a dream decades in the making. Our founder embarked on his winemaking journey to create exceptional, small-batch wines in the heart of Carlton, Oregon.</p>
-                        <p class="mb-4 text-gray-600">Our name is a nod to the maritime spirit and the hard-working ports that define the character of the Pacific Northwest. We believe in letting the quality of the grapes speak for itself, with minimal intervention to bring forth the truest expression of the fruit.</p>
-                        <p class="text-gray-600">Our first vintage, a 2024 Grenache from the renowned Lowry Vineyard, marks the beginning of our story. We are thrilled to share our wine with you and look forward to the journey ahead.</p>
-                    </div>
-                    <div>
-                        <!-- LOCAL FILE PATH -->
-                        <img class="rounded-lg shadow-md w-full h-auto object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Wine Bottles">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Page -->
-        <section id="contact" class="page-content">
-            <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Get In Touch</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Contact Info & Form -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
-                        <p class="mb-6 text-gray-600">We would love to hear from you. For inquiries, please reach out to us directly.</p>
-                        <div class="space-y-4">
-                            <p><strong>Email:</strong> info@seaportcellars.com</p>
-                            <p><strong>Location:</strong> Carlton, Oregon</p>
-                        </div>
-                    </div>
-                    <!-- Mailing List -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Join Our Mailing List</h3>
-                        <p class="mb-6 text-gray-600">Be the first to know about new releases, upcoming events, and news from Seaport Cellars.</p>
-                        <form id="mailing-list-form" class="space-y-4">
-                            <div>
-                                <label for="email" class="sr-only">Email address</label>
-                                <input type="email" name="email" id="email-input" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-800 focus:border-red-800" placeholder="Enter your email" required>
-                            </div>
-                            <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300">Sign Up</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-12">
-        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2024 Seaport Cellars. All Rights Reserved.</p>
-            <p class="text-gray-400 mt-1">Carlton, Oregon</p>
-        </div>
-    </footer>
-
-    <!-- Success/Error Modal -->
-    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
-            <p id="modal-message" class="text-lg"></p>
-            <button onclick="closeModal()" class="mt-6 bg-gray-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-800 transition duration-300">Close</button>
-        </div>
+      </div>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <button onclick="showPage('home')" class="text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="home">Home</button>
+        <button onclick="showPage('wines')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="wines">Our Wines</button>
+        <button onclick="showPage('about')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="about">About Us</button>
+        <button onclick="showPage('contact')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="contact">Contact & Mailing List</button>
+      </div>
+    </div>
+  </header>
 
+  <!-- Main Content -->
+  <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+    <!-- Home -->
+    <section id="home" class="page-content">
+      <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+        <div class="relative">
+          <img class="w-full h-64 sm:h-96 object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Grenache and Grenache Blanc bottles"/>
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center">
+              <h1 class="text-4xl sm:text-6xl text-white font-bold tracking-tight">Crafted in Oregon.</h1>
+              <p class="mt-4 text-lg sm:text-xl text-gray-200">A tale of passion, family, and the finest Oregon grapes.</p>
+              <button onclick="showPage('wines')" class="mt-8 bg-white text-gray-900 hover:bg-gray-200 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">Discover Our Wines</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Firebase SDK (Mailing list will not work in local file) -->
-    <script type="module">
-        // NOTE: The mailing list functionality requires a live server and connection
-        // to a Firebase project. It will not work when opening this HTML file locally.
-        const mailingListForm = document.getElementById('mailing-list-form');
-        mailingListForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // In a local environment, we just show an alert.
-            alert("Mailing list signup is disabled in this local preview.");
-        });
-    </script>
-    
-    <!-- Page Switching & UI Logic -->
-    <script>
-        // --- Page Navigation Logic ---
-        const pages = document.querySelectorAll('.page-content');
-        const tabs = document.querySelectorAll('[data-tab]');
-        const mobileTabs = document.querySelectorAll('[data-mobile-tab]');
+    <!-- Our Wines -->
+    <section id="wines" class="page-content">
+      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Inaugural Vintage</h2>
+        <div class="grid grid-cols-1 gap-12 items-center">
+          <!-- Grenache -->
+          <div class="text-center lg:text-left flex flex-col sm:flex-row items-center gap-8">
+            <img class="w-24 sm:w-32 h-auto mx-auto lg:mx-0" src="images/SC_GRENACHE_labeled bottle_no_cap.jpg" alt="Seaport Cellars Grenache"/>
+            <div>
+              <h3 class="text-2xl font-bold">No.1: 2024 Grenache</h3>
+              <p class="mt-2 text-gray-600">Seaport Cellars showcases the expression of the Grenache grape in the vineyards of the Pacific Northwest. Our debut bottling comes from the Lowry Vineyard, perched at 1,500 feet in Oregon's Rogue Valley AVA, just outside Medford. This site yields fruit with striking purity and hints of baking spice — a combo that plays well year round. It's a natural with turkey at Thanksgiving, a chilled Porch Pounder in summer, or best of all, enjoyed on the deck of a boat at any seaport.</p>
+              <ul class="mt-4 text-left space-y-2 inline-block">
+                <li class="flex items-center"><span class="font-semibold w-32">VINTAGE:</span> 2024</li>
+                <li class="flex items-center"><span class="font-semibold w-32">VARIETAL:</span> Grenache</li>
+                <li class="flex items-center"><span class="font-semibold w-32">ABV:</span> 13.6%</li>
+                <li class="flex items-center"><span class="font-semibold w-32">VINEYARD:</span> Lowry Vineyard</li>
+                <li class="flex items-center"><span class="font-semibold w-32">PRODUCTION:</span> 75 Cases</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function showPage(pageId) {
-            // Hide all pages
-            pages.forEach(page => {
-                page.style.display = 'none';
-            });
+    <!-- About -->
+    <section id="about" class="page-content">
+      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Story</h2>
+            <p class="mb-4 text-gray-600">Seaport Cellars was born from a passion for wine and a dream decades in the making. Our founder embarked on his winemaking journey to create exceptional, small-batch wines in the heart of Carlton, Oregon.</p>
+            <p class="mb-4 text-gray-600">Our name is a nod to the maritime spirit and the hard-working ports that define the character of the Pacific Northwest. We believe in letting the quality of the grapes speak for itself, with minimal intervention to bring forth the truest expression of the fruit.</p>
+            <p class="text-gray-600">Our first vintage, a 2024 Grenache from the renowned Lowry Vineyard, marks the beginning of our story. We are thrilled to share our wine with you and look forward to the journey ahead.</p>
+          </div>
+          <div>
+            <img class="rounded-lg shadow-md w-full h-auto object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Wine Bottles"/>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            // Show the selected page
-            const activePage = document.getElementById(pageId);
-            if (activePage) {
-                activePage.style.display = 'block';
-            }
+    <!-- Contact -->
+    <section id="contact" class="page-content">
+      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Get In Touch</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+            <p class="mb-6 text-gray-600">We would love to hear from you. For inquiries, please reach out to us directly.</p>
+            <div class="space-y-4">
+            <p><strong>Email:</strong> seaportcellars@gmail.com</p>
+              <p><strong>Location:</strong> Carlton, Oregon</p>
+            </div>
+          </div>
 
-            // Update desktop tab styles
-            tabs.forEach(tab => {
-                if (tab.getAttribute('data-tab') === pageId) {
-                    tab.classList.remove('tab-inactive', 'text-gray-400');
-                    tab.classList.add('tab-active', 'text-white');
-                } else {
-                    tab.classList.remove('tab-active', 'text-white');
-                    tab.classList.add('tab-inactive', 'text-gray-400');
-                }
-            });
-            
-            // Update mobile tab styles
-            mobileTabs.forEach(tab => {
-                if(tab.getAttribute('data-mobile-tab') === pageId) {
-                    tab.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
-                    tab.classList.add('text-white', 'bg-gray-900');
-                } else {
-                    tab.classList.remove('text-white', 'bg-gray-900');
-                    tab.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
-                }
-            });
+          <!-- Mailing List (Mailchimp inline via hidden iframe) -->
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Join Our Mailing List</h3>
+            <p class="mb-6 text-gray-600">Be the first to know about new releases, upcoming events, and news from Seaport Cellars.</p>
 
-            // Close mobile menu after selection
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.add('hidden');
+            <!-- BEGIN: Mailchimp form -->
+            <form
+              id="mailchimp-form"
+              action="https://seaportcellars.us8.list-manage.com/subscribe/post?u=8b249c6b467a8bb036023ecda&id=c537128faa&f_id=00b217e1f0"
+              method="post"
+              target="mc_iframe"
+              novalidate
+              class="space-y-4"
+            >
+              <label for="mce-EMAIL" class="sr-only">Email address</label>
+              <input
+                type="email"
+                name="EMAIL"
+                id="mce-EMAIL"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-800 focus:border-red-800"
+                placeholder="Enter your email"
+                required
+              />
+
+              <!-- Optional: First/Last name (uncomment if your audience has these merge tags) -->
+              <!--
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" name="FNAME" id="mce-FNAME" class="px-4 py-3 border border-gray-300 rounded-lg" placeholder="First name">
+                <input type="text" name="LNAME" id="mce-LNAME" class="px-4 py-3 border border-gray-300 rounded-lg" placeholder="Last name">
+              </div>
+              -->
+
+              <!-- Honeypot -->
+              <div style="position:absolute; left:-5000px;" aria-hidden="true">
+                <input type="text" name="b_8b249c6b467a8bb036023ecda_c537128faa" tabindex="-1" value="">
+              </div>
+
+              <button
+                type="submit"
+                name="subscribe"
+                class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300"
+              >
+                Sign Up
+              </button>
+            </form>
+            <!-- END: Mailchimp form -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white mt-12">
+    <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
+      <p>&copy; 2024 Seaport Cellars. All Rights Reserved.</p>
+      <p class="text-gray-400 mt-1">Carlton, Oregon</p>
+    </div>
+  </footer>
+
+  <!-- Success/Error Modal -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
+      <p id="modal-message" class="text-lg"></p>
+      <button onclick="closeModal()" class="mt-6 bg-gray-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-800 transition duration-300">Close</button>
+    </div>
+  </div>
+
+  <!-- Hidden iframe target for Mailchimp (keeps user on-page) -->
+  <iframe name="mc_iframe" id="mc_iframe" class="hidden" style="display:none;"></iframe>
+
+  <!-- Page Switching & UI Logic -->
+  <script>
+    // --- Page Navigation Logic ---
+    const pages = document.querySelectorAll('.page-content');
+    const tabs = document.querySelectorAll('[data-tab]');
+    const mobileTabs = document.querySelectorAll('[data-mobile-tab]');
+
+    function showPage(pageId) {
+      pages.forEach(p => p.style.display = 'none');
+      const activePage = document.getElementById(pageId);
+      if (activePage) activePage.style.display = 'block';
+
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-tab') === pageId) {
+          tab.classList.remove('tab-inactive', 'text-gray-400');
+          tab.classList.add('tab-active', 'text-white');
+        } else {
+          tab.classList.remove('tab-active', 'text-white');
+          tab.classList.add('tab-inactive', 'text-gray-400');
         }
+      });
 
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- Modal Logic ---
-        const modal = document.getElementById('modal');
-        const modalMessage = document.getElementById('modal-message');
-
-        function showModal(message) {
-            modalMessage.textContent = message;
-            modal.classList.remove('hidden');
+      mobileTabs.forEach(tab => {
+        if (tab.getAttribute('data-mobile-tab') === pageId) {
+          tab.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+          tab.classList.add('text-white', 'bg-gray-900');
+        } else {
+          tab.classList.remove('text-white', 'bg-gray-900');
+          tab.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
         }
+      });
 
-        function closeModal() {
-            modal.classList.add('hidden');
-        }
+      document.getElementById('mobile-menu').classList.add('hidden');
+    }
 
-        // Show the home page by default on load
-        window.onload = function() {
-            showPage('home');
-        };
-    </script>
+    // --- Mobile Menu Toggle ---
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
+    // --- Modal Logic ---
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    function showModal(message) { modalMessage.textContent = message; modal.classList.remove('hidden'); }
+    function closeModal() { modal.classList.add('hidden'); }
+
+    // Show the home page by default on load
+    window.onload = function() { showPage('home'); };
+  </script>
+
+  <!-- Mailchimp inline handler (keeps you on the page + uses your modal) -->
+  <script src="mailchimp-inline.js"></script>
 </body>
 </html>
