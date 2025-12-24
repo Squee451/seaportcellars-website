@@ -37,6 +37,7 @@
         <nav class="hidden md:flex space-x-4">
           <button onclick="showPage('home')" class="tab-active text-white hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="home">Home</button>
           <button onclick="showPage('wines')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="wines">Our Wines</button>
+          <button onclick="showPage('shop')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="shop">Shop</button>
           <button onclick="showPage('about')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="about">About Us</button>
           <button onclick="showPage('contact')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="contact">Contact & Mailing List</button>
         </nav>
@@ -56,6 +57,7 @@
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <button onclick="showPage('home')" class="text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="home">Home</button>
         <button onclick="showPage('wines')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="wines">Our Wines</button>
+        <button onclick="showPage('shop')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="shop">Shop</button>
         <button onclick="showPage('about')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="about">About Us</button>
         <button onclick="showPage('contact')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="contact">Contact & Mailing List</button>
       </div>
@@ -98,7 +100,98 @@
                 <li class="flex items-center"><span class="font-semibold w-32">VINEYARD:</span> Lowry Vineyard</li>
                 <li class="flex items-center"><span class="font-semibold w-32">PRODUCTION:</span> 75 Cases</li>
               </ul>
+              <button onclick="showPage('shop')" class="mt-6 bg-gray-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition duration-300">
+                Buy Now - From $30/bottle
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="page-content">
+      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Purchase Our Wine</h2>
+        <p class="text-center text-gray-600 mb-10">Choose your preferred quantity and delivery option.</p>
+
+        <!-- Product Display -->
+        <div class="max-w-4xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <img class="w-32 h-auto" src="images/SC_GRENACHE_labeled bottle_no_cap.jpg" alt="2024 Grenache"/>
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold">2024 Grenache</h3>
+              <p class="text-gray-600 mt-2">Lowry Vineyard, Rogue Valley AVA</p>
+              <p class="text-gray-500 text-sm mt-1">13.6% ABV | 75 Cases Produced</p>
+            </div>
+          </div>
+
+          <!-- Pricing Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Single Bottle -->
+            <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+              <h4 class="text-xl font-bold mb-2">Single Bottle</h4>
+              <p class="text-3xl font-bold text-gray-900 mb-2">$30</p>
+              <p class="text-sm text-gray-500 mb-6">per bottle</p>
+              <div class="space-y-3">
+                <button onclick="showAgeVerification('STRIPE_LINK_SINGLE_SHIPPED')"
+                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
+                  Ship to Me
+                </button>
+                <button onclick="showAgeVerification('STRIPE_LINK_SINGLE_PICKUP')"
+                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                  Local Pickup
+                </button>
+              </div>
+            </div>
+
+            <!-- 3-Pack -->
+            <div class="border-2 border-red-800 rounded-lg p-6 text-center hover:shadow-lg transition-shadow relative">
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-800 text-white text-xs px-3 py-1 rounded-full">Best Value</span>
+              <h4 class="text-xl font-bold mb-2">3-Pack</h4>
+              <p class="text-3xl font-bold text-gray-900 mb-2">$75</p>
+              <p class="text-sm text-gray-500 mb-1">$25 per bottle</p>
+              <p class="text-sm text-green-600 font-medium mb-4">Save 17%</p>
+              <div class="space-y-3">
+                <button onclick="showAgeVerification('STRIPE_LINK_3PACK_SHIPPED')"
+                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
+                  Ship to Me
+                </button>
+                <button onclick="showAgeVerification('STRIPE_LINK_3PACK_PICKUP')"
+                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                  Local Pickup
+                </button>
+              </div>
+            </div>
+
+            <!-- Case -->
+            <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+              <h4 class="text-xl font-bold mb-2">Case of 12</h4>
+              <p class="text-3xl font-bold text-gray-900 mb-2">$250</p>
+              <p class="text-sm text-gray-500 mb-1">$20.83 per bottle</p>
+              <p class="text-sm text-green-600 font-medium mb-4">Save 31%</p>
+              <div class="space-y-3">
+                <button onclick="showAgeVerification('STRIPE_LINK_CASE_SHIPPED')"
+                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
+                  Ship to Me
+                </button>
+                <button onclick="showAgeVerification('STRIPE_LINK_CASE_PICKUP')"
+                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                  Local Pickup
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Info -->
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h4 class="font-bold mb-3">Shipping Information</h4>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>Shipping available to select states only</li>
+              <li>Adult signature (21+) required for all deliveries</li>
+              <li>Orders typically ship within 2-3 business days</li>
+              <li>Local pickup available in Carlton, Oregon</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -131,7 +224,7 @@
             <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
             <p class="mb-6 text-gray-600">We would love to hear from you. For inquiries, please reach out to us directly.</p>
             <div class="space-y-4">
-            <p><strong>Email:</strong> seaportcellars@gmail.com</p>
+            <p><strong>Email:</strong> seaportcellarsllc@gmail.com</p>
               <p><strong>Location:</strong> Carlton, Oregon</p>
             </div>
           </div>
@@ -193,6 +286,7 @@
     <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
       <p>&copy; 2024 Seaport Cellars. All Rights Reserved.</p>
       <p class="text-gray-400 mt-1">Carlton, Oregon</p>
+      <p class="text-gray-400 mt-2 text-xs">Must be 21+ to purchase. Please drink responsibly.</p>
     </div>
   </footer>
 
@@ -201,6 +295,23 @@
     <div class="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
       <p id="modal-message" class="text-lg"></p>
       <button onclick="closeModal()" class="mt-6 bg-gray-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-800 transition duration-300">Close</button>
+    </div>
+  </div>
+
+  <!-- Age Verification Modal -->
+  <div id="age-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center">
+      <h3 class="text-2xl font-bold mb-4">Age Verification Required</h3>
+      <p class="text-gray-600 mb-6">You must be 21 years or older to purchase wine. By clicking "I am 21+" you confirm that you are of legal drinking age.</p>
+      <div class="space-y-3">
+        <button id="age-confirm-btn" class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300">
+          I am 21 or older - Continue to Checkout
+        </button>
+        <button onclick="closeAgeModal()" class="w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
+          Cancel
+        </button>
+      </div>
+      <p class="text-xs text-gray-400 mt-4">ID verification required at delivery.</p>
     </div>
   </div>
 
@@ -252,6 +363,32 @@
     const modalMessage = document.getElementById('modal-message');
     function showModal(message) { modalMessage.textContent = message; modal.classList.remove('hidden'); }
     function closeModal() { modal.classList.add('hidden'); }
+
+    // --- Age Verification & Checkout Logic ---
+    let pendingCheckoutUrl = null;
+
+    function showAgeVerification(stripeLink) {
+      pendingCheckoutUrl = stripeLink;
+      document.getElementById('age-modal').classList.remove('hidden');
+    }
+
+    function closeAgeModal() {
+      document.getElementById('age-modal').classList.add('hidden');
+      pendingCheckoutUrl = null;
+    }
+
+    document.getElementById('age-confirm-btn').addEventListener('click', function() {
+      if (pendingCheckoutUrl) {
+        window.location.href = pendingCheckoutUrl;
+      }
+    });
+
+    // Close age modal on outside click
+    document.getElementById('age-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeAgeModal();
+      }
+    });
 
     // Show the home page by default on load
     window.onload = function() { showPage('home'); };
