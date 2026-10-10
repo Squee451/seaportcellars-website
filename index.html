@@ -115,7 +115,7 @@
                 <li class="flex items-center"><span class="font-semibold w-32">PRODUCTION:</span> 75 Cases</li>
               </ul>
               <button onclick="showPage('shop')" class="mt-6 bg-gray-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition duration-300">
-                Buy Now - From $30/bottle
+                Buy Now - From $25/bottle
               </button>
             </div>
           </div>
@@ -198,9 +198,9 @@
             <div onclick="selectCard(this)" class="product-card border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-all cursor-pointer relative">
               <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-800 text-white text-xs px-3 py-1 rounded-full">Best Value</span>
               <h4 class="text-xl font-bold mb-2">Case of 12</h4>
-              <p class="text-3xl font-bold text-gray-900 mb-2">$275</p>
-              <p class="text-sm text-gray-500 mb-1">~$22.92 per bottle</p>
-              <p class="text-sm text-green-600 font-medium mb-4">Save 24%</p>
+              <p class="text-3xl font-bold text-gray-900 mb-2">$300</p>
+              <p class="text-sm text-gray-500 mb-1">$25 per bottle</p>
+              <p class="text-sm text-green-600 font-medium mb-4">Save 17%</p>
               <div class="space-y-3">
                 <button onclick="event.stopPropagation(); startDeliveryFlow('case')"
                         class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
@@ -219,7 +219,7 @@
           <div class="bg-gray-50 rounded-lg p-6">
             <h4 class="font-bold mb-3">Delivery & Pickup Information</h4>
             <ul class="text-sm text-gray-600 space-y-2">
-              <li><strong>Local Delivery:</strong> Available within approximately 10 miles of Portland (97214). A $10 delivery fee applies to most orders. Cases of 12 ship free.</li>
+              <li><strong>Local Delivery:</strong> Available within approximately 10 miles of Portland (97214). A $10 delivery fee applies to 3- and 6-packs. Delivery is free on a case of 12.</li>
               <li><strong>Local Pickup:</strong> 130 W Main St, Carlton, OR 97111. Appointments only on Mondays and Tuesdays. Email <a href="mailto:seaportcellarsllc@gmail.com" class="underline">seaportcellarsllc@gmail.com</a> or call <a href="tel:9715705442" class="underline">971-570-5442</a> to schedule.</li>
               <li>Adult signature (21+) required for all deliveries and pickups.</li>
             </ul>
@@ -427,8 +427,8 @@
       threepack_pickup:   'https://buy.stripe.com/cNi00bcLXf0j6Xp1yhdMI00',  // 3-Pack Pickup — $75.00
       sixpack_delivery:   'https://buy.stripe.com/4gMaEPh2daK3gxZ5OxdMI03',  // 6-Pack Delivery — $160.00
       sixpack_pickup:     'https://buy.stripe.com/00w9ALh2dg4nchJ90JdMI01',  // 6-Pack Pickup — $150.00
-      case_delivery:      'https://buy.stripe.com/cNi8wH5jv2dx95xa4NdMI06',  // Case of 12 Delivery — $275.00
-      case_pickup:        'https://buy.stripe.com/cNi8wH5jv2dx95xa4NdMI06',  // Case of 12 Pickup — $275.00
+      case_delivery:      'https://buy.stripe.com/3cIbITeU54lF5TlccVdMI09',  // Case of 12 Delivery — $300.00
+      case_pickup:        'https://buy.stripe.com/7sY9ALbHT5pJbdFdgZdMI08',  // Case of 12 Pickup — $300.00
     };
 
     // --- Valid Delivery Zip Codes (~10mi radius from 97214, Portland area) ---
