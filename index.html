@@ -1,572 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seaport Cellars | Small-Batch Oregon Wines from Carlton</title>
-  <meta name="description" content="Seaport Cellars - Small-batch Oregon wines from Carlton. Our 2024 Grenache from Lowry Vineyard in the Rogue Valley is now available."/>
-  <link rel="canonical" href="https://seaportcellars.com/"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seaport Cellars | Distinctive Grenache from Carlton, Oregon</title>
+  <meta name="description" content="Seaport Cellars — distinctive Pacific Northwest Grenache, crafted in Carlton, Oregon. Our 2024 Rogue Valley Grenache from Lowry Vineyard is available now.">
+  <link rel="canonical" href="https://www.seaportcellars.com/">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://seaportcellars.com/"/>
-  <meta property="og:title" content="Seaport Cellars | Small-Batch Oregon Wines"/>
-  <meta property="og:description" content="Small-batch Oregon wines from Carlton. Our 2024 Grenache from Lowry Vineyard in the Rogue Valley is now available."/>
-  <meta property="og:image" content="https://seaportcellars.com/images/SC_GRENACHE_labeled bottle_no_cap.jpg"/>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.seaportcellars.com/">
+  <meta property="og:title" content="Seaport Cellars | Distinctive Grenache. Inspired by Place.">
+  <meta property="og:description" content="Small-batch Pacific Northwest Grenache, crafted in Carlton, Oregon. Our 2024 Rogue Valley Grenache is available now.">
+  <meta property="og:image" content="https://www.seaportcellars.com/assets/2024-bottle.jpg">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Seaport Cellars | Small-Batch Oregon Wines"/>
-  <meta name="twitter:description" content="Small-batch Oregon wines from Carlton. Our 2024 Grenache from Lowry Vineyard in the Rogue Valley is now available."/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seaport Cellars | Distinctive Grenache. Inspired by Place.">
+  <meta name="twitter:description" content="Small-batch Pacific Northwest Grenache, crafted in Carlton, Oregon. Our 2024 Rogue Valley Grenache is available now.">
+  <meta name="twitter:image" content="https://www.seaportcellars.com/assets/2024-bottle.jpg">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts: Inter & Playfair Display -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-
-  <!-- Custom Styles -->
-  <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f8f7f5; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    .tab-active { border-bottom-color: #a12a34; color: #1f2937; font-weight: 600; }
-    .tab-inactive { border-bottom-color: transparent; color: #6b7280; }
-    .page-content { display: none; animation: fadeIn 0.5s ease-in-out; }
-    @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="text-gray-800">
-
-  <!-- Header & Navigation -->
-  <header class="bg-gray-900 shadow-md sticky top-0 z-50 text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <img class="h-10" src="images/SEAPORT CELLARS hz wht rev.png" alt="Seaport Cellars Logo"/>
-        </div>
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-4">
-          <button onclick="showPage('home')" class="tab-active text-white hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="home">Home</button>
-          <button onclick="showPage('wines')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="wines">Our Wines</button>
-          <button onclick="showPage('shop')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="shop">Shop</button>
-          <button onclick="showPage('about')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="about">About Us</button>
-          <button onclick="showPage('contact')" class="tab-inactive text-gray-400 hover:text-gray-300 px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-300" data-tab="contact">Contact & Mailing List</button>
-        </nav>
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <span class="sr-only">Open main menu</span>
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <button onclick="showPage('home')" class="text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="home">Home</button>
-        <button onclick="showPage('wines')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="wines">Our Wines</button>
-        <button onclick="showPage('shop')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="shop">Shop</button>
-        <button onclick="showPage('about')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="about">About Us</button>
-        <button onclick="showPage('contact')" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-mobile-tab="contact">Contact & Mailing List</button>
-      </div>
-    </div>
+<body>
+  <header>
+    <a class="brand" href="index.html">Seaport Cellars</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="2024-grenache.html">2024 Grenache</a>
+      <a href="2025-grenache.html">2025 Grenache</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto p-4 sm:p-6 lg:p-8">
-    <!-- Home -->
-    <section id="home" class="page-content">
-      <div class="bg-white rounded-lg shadow-xl overflow-hidden">
-        <div class="relative">
-          <img class="w-full h-64 sm:h-96 object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Grenache and Grenache Blanc bottles"/>
-          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <div class="text-center">
-              <h1 class="text-4xl sm:text-6xl text-white font-bold tracking-tight">Crafted in Oregon.</h1>
-              <p class="mt-4 text-lg sm:text-xl text-gray-200">A tale of passion, family, and the finest Oregon grapes.</p>
-              <button onclick="showPage('wines')" class="mt-8 bg-white text-gray-900 hover:bg-gray-200 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">Discover Our Wines</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="hero">
+    <main class="copy">
+      <h1>Distinctive Grenache.<br>Inspired by Place.</h1>
+      <div class="eyebrow">Pacific Northwest Sourced. Crafted in Oregon.</div>
+      <p>A passion for Grenache and the remarkable vineyards of the Pacific Northwest. Small-batch wines that express the character of their origins, crafted with care in Carlton, Oregon.</p>
+      <a class="btn" href="#wines">Discover Our Wines</a>
+      <div class="note">2024 GRENACHE · ROGUE VALLEY, OREGON · 72 CASES</div>
+    </main>
+    <img class="photo hero-photo" src="assets/2024-bottle.jpg" alt="Seaport Cellars 2024 Grenache bottle">
+  </div>
 
-    <!-- Our Wines -->
-    <section id="wines" class="page-content">
-      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Inaugural Vintage</h2>
-        <div class="grid grid-cols-1 gap-12 items-center">
-          <!-- Grenache -->
-          <div class="text-center lg:text-left flex flex-col sm:flex-row items-center gap-8">
-            <img class="w-24 sm:w-32 h-auto mx-auto lg:mx-0" src="images/SC_GRENACHE_labeled bottle_no_cap.jpg" alt="Seaport Cellars Grenache"/>
-            <div>
-              <h3 class="text-2xl font-bold">No.1: 2024 Grenache</h3>
-              <p class="mt-2 text-gray-600">Seaport Cellars showcases the expression of the Grenache grape in the vineyards of the Pacific Northwest. Our debut bottling comes from the Lowry Vineyard, perched at 1,500 feet in Oregon's Rogue Valley AVA, just outside Medford. This site yields fruit with striking purity and hints of baking spice — a combo that plays well year round. It's a natural with turkey at Thanksgiving, a chilled Porch Pounder in summer, or best of all, enjoyed on the deck of a boat at any seaport.</p>
-              <ul class="mt-4 text-left space-y-2 inline-block">
-                <li class="flex items-center"><span class="font-semibold w-32">VINTAGE:</span> 2024</li>
-                <li class="flex items-center"><span class="font-semibold w-32">VARIETAL:</span> Grenache</li>
-                <li class="flex items-center"><span class="font-semibold w-32">ABV:</span> 13.6%</li>
-                <li class="flex items-center"><span class="font-semibold w-32">VINEYARD:</span> Lowry Vineyard</li>
-                <li class="flex items-center"><span class="font-semibold w-32">PRODUCTION:</span> 75 Cases</li>
-              </ul>
-              <button onclick="showPage('shop')" class="mt-6 bg-gray-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition duration-300">
-                Buy Now - From $25/bottle
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Shop -->
-    <section id="shop" class="page-content">
-      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Purchase Our Wine</h2>
-        <p class="text-center text-gray-600 mb-10">Choose your preferred quantity and delivery option.</p>
-
-        <!-- Product Display -->
-        <div class="max-w-6xl mx-auto">
-          <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-            <img class="w-32 h-auto" src="images/SC_GRENACHE_labeled bottle_no_cap.jpg" alt="2024 Grenache"/>
-            <div class="text-center md:text-left">
-              <h3 class="text-2xl font-bold">2024 Grenache</h3>
-              <p class="text-gray-600 mt-2">Lowry Vineyard, Rogue Valley AVA</p>
-              <p class="text-gray-500 text-sm mt-1">13.6% ABV | 75 Cases Produced</p>
-            </div>
-          </div>
-
-          <!-- Pricing Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <!-- Single Bottle -->
-            <div onclick="selectCard(this)" class="product-card border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-all cursor-pointer">
-              <h4 class="text-xl font-bold mb-2">Single Bottle</h4>
-              <p class="text-3xl font-bold text-gray-900 mb-2">$30</p>
-              <p class="text-sm text-gray-500 mb-6">per bottle</p>
-              <div class="space-y-3">
-                <p class="text-xs text-gray-400 italic">Pickup only</p>
-                <button onclick="event.stopPropagation(); startPickupFlow('single')"
-                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
-                  Local Pickup
-                </button>
-              </div>
-            </div>
-
-            <!-- 3-Pack -->
-            <div onclick="selectCard(this)" class="product-card border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-all cursor-pointer">
-              <h4 class="text-xl font-bold mb-2">3-Pack</h4>
-              <p class="text-3xl font-bold text-gray-900 mb-2">$75</p>
-              <p class="text-sm text-gray-500 mb-1">$25 per bottle</p>
-              <p class="text-sm text-green-600 font-medium mb-4">Save 17%</p>
-              <div class="space-y-3">
-                <button onclick="event.stopPropagation(); startDeliveryFlow('threepack')"
-                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
-                  Local Delivery
-                </button>
-                <p class="text-xs text-gray-400">+$10 delivery fee</p>
-                <button onclick="event.stopPropagation(); startPickupFlow('threepack')"
-                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
-                  Local Pickup
-                </button>
-              </div>
-            </div>
-
-            <!-- 6-Pack -->
-            <div onclick="selectCard(this)" class="product-card border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-all cursor-pointer">
-              <h4 class="text-xl font-bold mb-2">6-Pack</h4>
-              <p class="text-3xl font-bold text-gray-900 mb-2">$150</p>
-              <p class="text-sm text-gray-500 mb-1">$25 per bottle</p>
-              <p class="text-sm text-green-600 font-medium mb-4">Save 17%</p>
-              <div class="space-y-3">
-                <button onclick="event.stopPropagation(); startDeliveryFlow('sixpack')"
-                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
-                  Local Delivery
-                </button>
-                <p class="text-xs text-gray-400">+$10 delivery fee</p>
-                <button onclick="event.stopPropagation(); startPickupFlow('sixpack')"
-                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
-                  Local Pickup
-                </button>
-              </div>
-            </div>
-
-            <!-- Case of 12 -->
-            <div onclick="selectCard(this)" class="product-card border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-all cursor-pointer relative">
-              <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-800 text-white text-xs px-3 py-1 rounded-full">Best Value</span>
-              <h4 class="text-xl font-bold mb-2">Case of 12</h4>
-              <p class="text-3xl font-bold text-gray-900 mb-2">$300</p>
-              <p class="text-sm text-gray-500 mb-1">$25 per bottle</p>
-              <p class="text-sm text-green-600 font-medium mb-4">Save 17%</p>
-              <div class="space-y-3">
-                <button onclick="event.stopPropagation(); startDeliveryFlow('case')"
-                        class="w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition">
-                  Local Delivery
-                </button>
-                <p class="text-xs text-green-600 font-medium">FREE delivery</p>
-                <button onclick="event.stopPropagation(); startPickupFlow('case')"
-                        class="w-full border border-gray-900 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
-                  Local Pickup
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Delivery & Pickup Info -->
-          <div class="bg-gray-50 rounded-lg p-6">
-            <h4 class="font-bold mb-3">Delivery & Pickup Information</h4>
-            <ul class="text-sm text-gray-600 space-y-2">
-              <li><strong>Local Delivery:</strong> Available within approximately 10 miles of Portland (97214). A $10 delivery fee applies to 3- and 6-packs. Delivery is free on a case of 12.</li>
-              <li><strong>Local Pickup:</strong> 130 W Main St, Carlton, OR 97111. Appointments only on Mondays and Tuesdays. Email <a href="mailto:seaportcellarsllc@gmail.com" class="underline">seaportcellarsllc@gmail.com</a> or call <a href="tel:9715705442" class="underline">971-570-5442</a> to schedule.</li>
-              <li>Adult signature (21+) required for all deliveries and pickups.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="page-content">
-      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Our Story</h2>
-            <p class="mb-4 text-gray-600">Seaport Cellars was born from a passion for wine and a dream decades in the making. Our founder embarked on his winemaking journey to create exceptional, small-batch wines in the heart of Carlton, Oregon.</p>
-            <p class="mb-4 text-gray-600">Our name is a nod to the maritime spirit and the hard-working ports that define the character of the Pacific Northwest. We believe in letting the quality of the grapes speak for itself, with minimal intervention to bring forth the truest expression of the fruit.</p>
-            <p class="text-gray-600">Our first vintage, a 2024 Grenache from the renowned Lowry Vineyard, marks the beginning of our story. We are thrilled to share our wine with you and look forward to the journey ahead.</p>
-          </div>
-          <div>
-            <img class="rounded-lg shadow-md w-full h-auto object-cover" src="images/SC_GRENACHE_labeled bottles_comp.jpg" alt="Seaport Cellars Wine Bottles"/>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="page-content">
-      <div class="bg-white rounded-lg shadow-xl p-6 sm:p-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Get In Touch</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <!-- Contact Info -->
-          <div>
-            <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
-            <p class="mb-6 text-gray-600">We would love to hear from you. For inquiries, please reach out to us directly.</p>
-            <div class="space-y-4">
-            <p><strong>Email:</strong> seaportcellarsllc@gmail.com</p>
-              <p><strong>Location:</strong> Carlton, Oregon</p>
-            </div>
-          </div>
-
-          <!-- Mailing List (Mailchimp inline via hidden iframe) -->
-          <div>
-            <h3 class="text-2xl font-bold mb-4">Join Our Mailing List</h3>
-            <p class="mb-6 text-gray-600">Be the first to know about new releases, upcoming events, and news from Seaport Cellars.</p>
-
-            <!-- BEGIN: Mailchimp form -->
-            <form
-              id="mailchimp-form"
-              action="https://seaportcellars.us8.list-manage.com/subscribe/post?u=8b249c6b467a8bb036023ecda&id=c537128faa&f_id=00b217e1f0"
-              method="post"
-              target="mc_iframe"
-              novalidate
-              class="space-y-4"
-            >
-              <label for="mce-EMAIL" class="sr-only">Email address</label>
-              <input
-                type="email"
-                name="EMAIL"
-                id="mce-EMAIL"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-red-800 focus:border-red-800"
-                placeholder="Enter your email"
-                required
-              />
-
-              <!-- Optional: First/Last name (uncomment if your audience has these merge tags) -->
-              <!--
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <input type="text" name="FNAME" id="mce-FNAME" class="px-4 py-3 border border-gray-300 rounded-lg" placeholder="First name">
-                <input type="text" name="LNAME" id="mce-LNAME" class="px-4 py-3 border border-gray-300 rounded-lg" placeholder="Last name">
-              </div>
-              -->
-
-              <!-- Honeypot -->
-              <div style="position:absolute; left:-5000px;" aria-hidden="true">
-                <input type="text" name="b_8b249c6b467a8bb036023ecda_c537128faa" tabindex="-1" value="">
-              </div>
-
-              <button
-                type="submit"
-                name="subscribe"
-                class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300"
-              >
-                Sign Up
-              </button>
-            </form>
-            <!-- END: Mailchimp form -->
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white mt-12">
-    <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
-      <p>&copy; 2025 Seaport Cellars. All Rights Reserved.</p>
-      <p class="text-gray-400 mt-1">Carlton, Oregon</p>
-      <p class="text-gray-400 mt-2 text-xs">Must be 21+ to purchase. Please drink responsibly.</p>
+  <section id="wines" class="wrap">
+    <div class="eyebrow">Explore the vintages</div>
+    <h2>One grape. Different places. Different wines.</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="assets/marty-lowry.jpg" alt="Marty beside the Lowry Vineyard Grenache sign">
+        <h3>2024 Rogue Valley Grenache</h3>
+        <p>Our inaugural release: fragrant, elegant and ready to enjoy.</p>
+        <a class="btn" href="2024-grenache.html">Explore the 2024</a>
+      </article>
+      <article class="card">
+        <img src="assets/los-rocosos-grapes.jpg" alt="Grenache grapes above the cobblestones at Los Rocosos Vineyard">
+        <h3>2025 The Rocks Grenache</h3>
+        <p>A darker, structured expression, with anticipated bottling in December 2026.</p>
+        <a class="btn" href="2025-grenache.html">Explore the 2025</a>
+      </article>
     </div>
+    <p><a href="our-story.html">Read Our Story</a></p>
+  </section>
+
+  <footer>
+    Seaport Cellars · Distinctive Grenache. Inspired by Place. · <a href="https://seaportcellars.com">seaportcellars.com</a><br>
+    <a href="mailto:seaportcellarsllc@gmail.com">seaportcellarsllc@gmail.com</a> · <a href="tel:+19715705442">971-570-5442</a> · Carlton, Oregon<br>
+    Wine is for adults 21 and older. Availability, shipping and delivery subject to applicable law.
   </footer>
-
-  <!-- Success/Error Modal -->
-  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
-      <p id="modal-message" class="text-lg"></p>
-      <button onclick="closeModal()" class="mt-6 bg-gray-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-800 transition duration-300">Close</button>
-    </div>
-  </div>
-
-  <!-- Age Verification Modal -->
-  <div id="age-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center">
-      <h3 class="text-2xl font-bold mb-4">Age Verification Required</h3>
-      <p class="text-gray-600 mb-6">You must be 21 years or older to purchase wine. By clicking "I am 21+" you confirm that you are of legal drinking age.</p>
-      <div class="space-y-3">
-        <button id="age-confirm-btn" class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300">
-          I am 21 or older - Continue to Checkout
-        </button>
-        <button onclick="closeAgeModal()" class="w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
-          Cancel
-        </button>
-      </div>
-      <p class="text-xs text-gray-400 mt-4">ID verification required at delivery.</p>
-    </div>
-  </div>
-
-  <!-- Zip Code Validation Modal -->
-  <div id="zip-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full text-center">
-      <h3 class="text-2xl font-bold mb-4">Check Delivery Availability</h3>
-      <p class="text-gray-600 mb-6">Enter your zip code to confirm we deliver to your area.</p>
-      <input type="text" id="zip-input" inputmode="numeric" pattern="[0-9]*" maxlength="5"
-             placeholder="Enter zip code"
-             class="w-full px-4 py-3 border border-gray-300 rounded-lg text-center text-lg tracking-widest focus:ring-red-800 focus:border-red-800 mb-2"/>
-      <p id="zip-error" class="text-red-600 text-sm hidden mb-4"></p>
-      <div class="space-y-3 mt-4">
-        <button onclick="validateAndProceed()"
-                class="w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300">
-          Check Availability
-        </button>
-        <button onclick="closeZipModal()"
-                class="w-full border border-gray-300 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
-          Cancel
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hidden iframe target for Mailchimp (keeps user on-page) -->
-  <iframe name="mc_iframe" id="mc_iframe" class="hidden" style="display:none;"></iframe>
-
-  <!-- Page Switching & UI Logic -->
-  <script>
-    // --- Page Navigation Logic ---
-    const pages = document.querySelectorAll('.page-content');
-    const tabs = document.querySelectorAll('[data-tab]');
-    const mobileTabs = document.querySelectorAll('[data-mobile-tab]');
-
-    function showPage(pageId) {
-      pages.forEach(p => p.style.display = 'none');
-      const activePage = document.getElementById(pageId);
-      if (activePage) activePage.style.display = 'block';
-
-      tabs.forEach(tab => {
-        if (tab.getAttribute('data-tab') === pageId) {
-          tab.classList.remove('tab-inactive', 'text-gray-400');
-          tab.classList.add('tab-active', 'text-white');
-        } else {
-          tab.classList.remove('tab-active', 'text-white');
-          tab.classList.add('tab-inactive', 'text-gray-400');
-        }
-      });
-
-      mobileTabs.forEach(tab => {
-        if (tab.getAttribute('data-mobile-tab') === pageId) {
-          tab.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
-          tab.classList.add('text-white', 'bg-gray-900');
-        } else {
-          tab.classList.remove('text-white', 'bg-gray-900');
-          tab.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
-        }
-      });
-
-      document.getElementById('mobile-menu').classList.add('hidden');
-    }
-
-    // --- Mobile Menu Toggle ---
-    document.getElementById('mobile-menu-button').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
-    // --- Modal Logic ---
-    const modal = document.getElementById('modal');
-    const modalMessage = document.getElementById('modal-message');
-    function showModal(message) { modalMessage.textContent = message; modal.classList.remove('hidden'); }
-    function closeModal() { modal.classList.add('hidden'); }
-
-    // --- Stripe Payment Links ---
-    // Replace each placeholder URL below with the corresponding Stripe Payment Link.
-    // Create these in your Stripe Dashboard > Payment Links.
-    // For delivery links, enable "Collect shipping address" in Stripe.
-    const STRIPE_LINKS = {
-      single_pickup:      'https://buy.stripe.com/14AaEP8vH4lFftV4KtdMI05',  // Single Bottle Pickup — $30.00
-      threepack_delivery: 'https://buy.stripe.com/dRmdR1bHTg4n5TlgtbdMI04',  // 3-Pack Delivery — $85.00
-      threepack_pickup:   'https://buy.stripe.com/cNi00bcLXf0j6Xp1yhdMI00',  // 3-Pack Pickup — $75.00
-      sixpack_delivery:   'https://buy.stripe.com/4gMaEPh2daK3gxZ5OxdMI03',  // 6-Pack Delivery — $160.00
-      sixpack_pickup:     'https://buy.stripe.com/00w9ALh2dg4nchJ90JdMI01',  // 6-Pack Pickup — $150.00
-      case_delivery:      'https://buy.stripe.com/3cIbITeU54lF5TlccVdMI09',  // Case of 12 Delivery — $300.00
-      case_pickup:        'https://buy.stripe.com/7sY9ALbHT5pJbdFdgZdMI08',  // Case of 12 Pickup — $300.00
-    };
-
-    // --- Valid Delivery Zip Codes (~10mi radius from 97214, Portland area) ---
-    // Verify/adjust this list using a zip code radius tool for your delivery area.
-    const VALID_ZIPS = new Set([
-      // Core Portland
-      '97201', '97202', '97203', '97204', '97205', '97206', '97207', '97208',
-      '97209', '97210', '97211', '97212', '97213', '97214', '97215', '97216',
-      '97217', '97218', '97219', '97220', '97221', '97227', '97230', '97232',
-      '97233', '97236', '97239', '97266', '97267',
-      // Lake Oswego
-      '97034', '97035',
-      // Beaverton / Tigard area
-      '97223', '97225', '97005', '97006', '97007', '97008', '97003', 
-      '97075', '97076', '97077', '97078'
-    ]);
-
-    // --- Card Selection Highlight ---
-    function selectCard(card) {
-      document.querySelectorAll('.product-card').forEach(c => {
-        c.classList.remove('border-2', 'border-red-800');
-        if (!c.classList.contains('border')) c.classList.add('border');
-        c.classList.add('border-gray-200');
-      });
-      card.classList.remove('border', 'border-gray-200');
-      card.classList.add('border-2', 'border-red-800');
-    }
-
-    // --- Ordering Flow State ---
-    let pendingCheckoutUrl = null;
-    let pendingProductKey = null;
-
-    // --- Delivery Flow: zip code validation first ---
-    function startDeliveryFlow(productKey) {
-      pendingProductKey = productKey;
-      document.getElementById('zip-input').value = '';
-      document.getElementById('zip-error').classList.add('hidden');
-      document.getElementById('zip-modal').classList.remove('hidden');
-      document.getElementById('zip-input').focus();
-    }
-
-    // --- Pickup Flow: straight to age verification ---
-    function startPickupFlow(productKey) {
-      const linkKey = productKey + '_pickup';
-      const url = STRIPE_LINKS[linkKey];
-      if (!url) {
-        showModal('Online ordering is not yet available. Please check back soon or contact us at seaportcellarsllc@gmail.com to place an order.');
-        return;
-      }
-      pendingCheckoutUrl = url;
-      document.getElementById('age-modal').classList.remove('hidden');
-    }
-
-    // --- Zip Code Validation ---
-    function validateAndProceed() {
-      const zipInput = document.getElementById('zip-input');
-      const zipError = document.getElementById('zip-error');
-      const zip = zipInput.value.trim();
-
-      // Basic format check
-      if (!/^\d{5}$/.test(zip)) {
-        zipError.textContent = 'Please enter a valid 5-digit zip code.';
-        zipError.classList.remove('hidden');
-        return;
-      }
-
-      // Check against valid zips
-      if (!VALID_ZIPS.has(zip)) {
-        zipError.textContent = 'Sorry, we don\'t deliver to that zip code yet. You can choose Local Pickup instead, or contact us at seaportcellarsllc@gmail.com.';
-        zipError.classList.remove('hidden');
-        return;
-      }
-
-      // Zip is valid — close zip modal, open age verification
-      const linkKey = pendingProductKey + '_delivery';
-      const url = STRIPE_LINKS[linkKey];
-      if (!url) {
-        closeZipModal();
-        showModal('Online ordering is not yet available. Please check back soon or contact us at seaportcellarsllc@gmail.com to place an order.');
-        return;
-      }
-
-      pendingCheckoutUrl = url;
-      closeZipModal();
-      document.getElementById('age-modal').classList.remove('hidden');
-    }
-
-    function closeZipModal() {
-      document.getElementById('zip-modal').classList.add('hidden');
-      document.getElementById('zip-input').value = '';
-      document.getElementById('zip-error').classList.add('hidden');
-      pendingProductKey = null;
-    }
-
-    // Allow Enter key to submit zip code
-    document.getElementById('zip-input').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        validateAndProceed();
-      }
-    });
-
-    // Close zip modal on outside click
-    document.getElementById('zip-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeZipModal();
-      }
-    });
-
-    // --- Age Verification & Checkout Logic ---
-    function showAgeVerification(stripeLink) {
-      pendingCheckoutUrl = stripeLink;
-      document.getElementById('age-modal').classList.remove('hidden');
-    }
-
-    function closeAgeModal() {
-      document.getElementById('age-modal').classList.add('hidden');
-      pendingCheckoutUrl = null;
-    }
-
-    document.getElementById('age-confirm-btn').addEventListener('click', function() {
-      if (pendingCheckoutUrl) {
-        window.location.href = pendingCheckoutUrl;
-      }
-    });
-
-    // Close age modal on outside click
-    document.getElementById('age-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeAgeModal();
-      }
-    });
-
-    // Show the home page by default on load
-    window.onload = function() { showPage('home'); };
-  </script>
-
-  <!-- Mailchimp inline handler (keeps you on the page + uses your modal) -->
-  <script src="mailchimp-inline.js"></script>
 </body>
 </html>
