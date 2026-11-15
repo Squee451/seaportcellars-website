@@ -17,8 +17,8 @@
       threepack_pickup:   'https://buy.stripe.com/cNi00bcLXf0j6Xp1yhdMI00',  // 3-Pack Pickup — $75.00
       sixpack_delivery:   'https://buy.stripe.com/4gMaEPh2daK3gxZ5OxdMI03',  // 6-Pack Delivery — $160.00
       sixpack_pickup:     'https://buy.stripe.com/00w9ALh2dg4nchJ90JdMI01',  // 6-Pack Pickup — $150.00
-      case_delivery:      'https://buy.stripe.com/3cIbITeU54lF5TlccVdMI09',  // Case of 12 Delivery — $300.00
-      case_pickup:        'https://buy.stripe.com/7sY9ALbHT5pJbdFdgZdMI08',  // Case of 12 Pickup — $300.00
+      case_delivery:      'https://buy.stripe.com/aFa5kvdQ105p4Phfp7dMI0b',  // Case of 12 Delivery — $275.00
+      case_pickup:        'https://buy.stripe.com/bJe3cnbHTaK33Ld0uddMI0a',  // Case of 12 Pickup — $275.00
     };
 
     // --- Valid Delivery Zip Codes (~10mi radius from 97214, Portland area) ---
