@@ -13,8 +13,8 @@
     // For delivery links, enable "Collect shipping address" in Stripe.
     const STRIPE_LINKS = {
       single_pickup:      'https://buy.stripe.com/14AaEP8vH4lFftV4KtdMI05',  // Single Bottle Pickup — $30.00
-      threepack_delivery: 'https://buy.stripe.com/dRmdR1bHTg4n5TlgtbdMI04',  // 3-Pack Delivery — $85.00
-      threepack_pickup:   'https://buy.stripe.com/cNi00bcLXf0j6Xp1yhdMI00',  // 3-Pack Pickup — $75.00
+      threepack_delivery: 'https://buy.stripe.com/7sY3cncLX05pa9B3GpdMI0d',  // 3-Pack Delivery — $100.00
+      threepack_pickup:   'https://buy.stripe.com/5kQ4grcLXf0ja9Bel3dMI0c',  // 3-Pack Pickup — $90.00
       sixpack_delivery:   'https://buy.stripe.com/4gMaEPh2daK3gxZ5OxdMI03',  // 6-Pack Delivery — $160.00
       sixpack_pickup:     'https://buy.stripe.com/00w9ALh2dg4nchJ90JdMI01',  // 6-Pack Pickup — $150.00
       case_delivery:      'https://buy.stripe.com/aFa5kvdQ105p4Phfp7dMI0b',  // Case of 12 Delivery — $275.00
