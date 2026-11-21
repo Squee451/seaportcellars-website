@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>2024 Rogue Valley Grenache | Seaport Cellars</title>
-  <meta name="description" content="Seaport Cellars 2024 Rogue Valley Grenache from Lowry Vineyard, 1,500 feet above Oregon's Rogue Valley. Only 72 cases produced. Order for pickup in Carlton or Portland-area delivery.">
+  <meta name="description" content="Seaport Cellars 2024 Rogue Valley Grenache from Lowry Vineyard, 1,500 feet above Oregon's Rogue Valley. Only 72 cases produced. Order for pickup in Carlton, Portland-area delivery, or shipping.">
   <link rel="canonical" href="https://www.seaportcellars.com/2024-grenache.html">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -44,6 +44,23 @@
 
     <section class="section" id="buy">
       <h2>Discover Our Inaugural Vintage</h2>
+      <p>Only 72 cases were produced - a genuinely small first chapter in the Seaport Cellars story.</p>
+
+      <p class="ways-lead">Two ways to order. Choose the one that fits where you are:</p>
+      <div class="ways">
+        <a class="way" href="#local">
+          <span class="way-title">Pickup or Portland delivery</span>
+          <span class="fine">Pick up in Carlton, or have it delivered within about 10 miles of Portland. From a single bottle.</span>
+        </a>
+        <a class="way" href="#ship">
+          <span class="way-title">Shipped to your door</span>
+          <span class="fine">For everyone farther away. Ships to most states in multiples of three bottles; a case ships free in the lower 48.</span>
+        </a>
+      </div>
+
+      <div class="order-block" id="local">
+      <div class="eyebrow">Local</div>
+      <h3>Pickup in Carlton or Portland-area delivery</h3>
 
       <div class="buy">
         <div class="buy-row">
@@ -79,13 +96,24 @@
         </div>
       </div>
 
-      <p>Only 72 cases were produced - a genuinely small first chapter in the Seaport Cellars story.</p>
-
       <ul class="info">
         <li><strong>Local delivery:</strong> within about 10 miles of Portland (97214). A $10 delivery fee applies to three- and six-bottle orders; delivery is free on a case of twelve.</li>
         <li><strong>Local pickup:</strong> 130 W Main St, Carlton, OR 97111, Mondays and Tuesdays by appointment. Email <a href="mailto:seaportcellarsllc@gmail.com">seaportcellarsllc@gmail.com</a> or call <a href="tel:+19715705442">971-570-5442</a> to schedule.</li>
         <li>Adult signature (21+) required for all deliveries and pickups.</li>
       </ul>
+      </div>
+
+      <div class="order-block ship" id="ship">
+        <div class="eyebrow">Shipped</div>
+        <h3>Shipped to your door</h3>
+        <p>Wine ships in multiples of three bottles: three for $90, six for $150, nine for $240, and a case of twelve for $275. The lower prices are applied automatically at checkout. Shipping and tax are shown before you pay, and an adult (21+) must sign for the delivery.</p>
+        <p><strong>Free shipping on a case:</strong> UPS Ground shipping is free on twelve bottles or more to the lower 48 states. Orders to Alaska and Hawaii pay shipping.</p>
+        <p>Shipped orders are handled by Vinoshipper, our licensed wine-shipping partner, so the cart and checkout below are theirs. In Oregon? Please use pickup or Portland-area delivery above; we are not shipping within Oregon yet.</p>
+        <div class="ship-cart">
+          <div class="vs-add-to-cart" data-vs-product-id="206753" data-vs-product-units="Bottles"></div>
+        </div>
+        <div class="vs-available"></div>
+      </div>
     </section>
   </main>
 
@@ -97,5 +125,13 @@
 
   <script src="assets/site.js"></script>
   <script src="assets/shop.js"></script>
+  <!-- Vinoshipper Injector v4: shipped orders (cart + Add to Cart + Available In).
+       6166 is Seaport's public Vinoshipper Account ID; no keys involved. -->
+  <script>
+    window.document.addEventListener('vinoshipper:loaded', function () {
+      window.Vinoshipper.init(6166, {});
+    }, false);
+  </script>
+  <script src="https://vinoshipper.com/injector/index.js"></script>
 </body>
 </html>
